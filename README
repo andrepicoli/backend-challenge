@@ -1,0 +1,70 @@
+# Processador de CSV com Python e Flask
+
+Este é um projeto simples que demonstra como criar um endpoint para processar arquivos CSV usando Python e Flask. O projeto está contêinerizado usando Docker Compose para facilitar a configuração e implantação.
+
+### Recursos
+
+- Faça upload de um arquivo CSV e obtenha o número de linhas no arquivo.
+- Construído usando Python e Flask.
+- Contêinerizado com Docker Compose.
+
+### Pré-requisitos
+
+- Docker
+- Docker Compose
+
+### Como Começar
+
+1. Clone este repositório:
+
+   ```bash
+   git clone https://github.com/andrepicoli/kanastra-backend-challenge.git
+   ```
+
+2. Navegue até o diretório do projeto:
+
+   ```bash
+   cd kanastra-backend-challenge
+   ```
+
+3. Construa e execute os contêineres Docker:
+
+   ```bash
+   docker-compose up --build
+   ```
+
+4. Quando os contêineres estiverem em execução, você pode acessar o aplicativo Flask em [http://localhost:5000](http://localhost:5000).
+
+### Uso
+
+- Faça upload de um arquivo CSV usando uma ferramenta como o Postman ou o curl para o endpoint `/upload`. Certifique-se de que o arquivo seja enviado como um formulário de dados com a chave `file`.
+
+   Exemplo usando `curl`:
+
+   ```bash
+   curl -F 'file=@path/para/seu/arquivo.csv' http://localhost:5000/upload
+   ```
+
+### Estrutura do Projeto
+
+```
+processador-csv/
+│
+├── app/
+│   ├── __init__.py
+│   └── main.py
+│
+├── Dockerfile
+├── docker-compose.yml
+└── requirements.txt
+```
+
+- `app/`: Contém o código da aplicação Flask.
+- `Dockerfile`: Especifica a configuração da imagem Docker.
+- `docker-compose.yml`: Define serviços, redes e volumes para o Docker Compose.
+- `requirements.txt`: Contém as dependências do Python.
+
+### Dependências
+
+- Flask: Framework web para Python.
+- pandas: Biblioteca de manipulação de dados para Python. 
